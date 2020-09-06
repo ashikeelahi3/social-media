@@ -1,0 +1,35 @@
+
+.User {
+  background: white;
+  margin: 20px auto;
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  max-width: 500px;
+}
+
+.userImgDiv {
+  display: flex; 
+  align-self: center;
+}
+
+.userImg{
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+}
+
+.userInfo {
+  margin-left: 20px;
+}
+
+.add-btn {
+  background: navy;
+  color: white;
+  height: 30px;
+  width: 130px;
+  border-radius: 5px;
+  border: 1px solid rgb(8, 8, 131);
+  cursor: pointer;
+}
+

@@ -1,24 +1,55 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import Heading from './components/Heading/Heading';
+import Data from './Data/data.json';
+import User from './components/User/User';
+import SeeMore from './components/SeeMore/SeeMore';
 
 function App() {
+  const [data, setData] = useState([]);
+  const [friends, setFriends] = useState([]);
+  const [showFriend, setShowFriend] = useState(20);
+
+  
+
+  const seeMoreFriends = () => {
+    setShowFriend(showFriend + 10);
+    setData(Data.slice(0, showFriend));
+  }
+
+  useEffect(() => {
+    setData(Data.slice(0, 10));
+  }, []);
+
+
+  const handelFriend = friend => {
+    if (friends.indexOf(friend) === -1) {
+      setFriends([...friends, friend]);
+    } else {
+      friends.splice(friends.indexOf(friend), 1);
+      setFriends([...friends]);
+    }
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Heading
+        friends={friends}
+      ></Heading>
+      {
+        data.map(data => <User
+          user={data}
+          handelFunction={handelFriend}
+        ></User>)
+      }
+
+      {
+          <SeeMore
+            length={data.length}
+            function={seeMoreFriends}
+          >See More</SeeMore>
+      }
+
     </div>
   );
 }

@@ -1,0 +1,26 @@
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  background: black;
+  color: white;
+  position: sticky;
+  height: 50px;
+}
+
+nav img {
+  position: absolute;
+  left: 0;
+  height: 50px;
+}
+
+nav li {
+  list-style-type: none;
+  font-size: x-large;
+  line-height: 50px;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+}

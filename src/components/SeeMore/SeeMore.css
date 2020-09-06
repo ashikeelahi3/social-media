@@ -1,0 +1,14 @@
+.seeMoreBtn {
+  width: 100px;
+  height: 50px;
+  background: goldenrod;
+  border-radius: 10px;
+  border: 1px solid gold;
+  color: white;
+  cursor: pointer;
+}
+
+.btnDiv {
+  /* display: flex; */
+  text-align: center;
+}
